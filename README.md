@@ -4,6 +4,18 @@
 
 An input file field that automatically renders a preview of the image file loaded.
 
+## Installation
+
+```
+npm install @alexseitsinger/previewable-image
+```
+
+or
+
+```
+yarn add @alexseitsinger/previewable-image
+```
+
 ## Props
 
 -   onPreviewLoaded - (Function, Required) - The method to invoke when the image file is successfully loaded from the input. Returns the file object and the base64 encoded image data.
