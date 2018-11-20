@@ -21,6 +21,7 @@ An input file field that automatically renders a preview of the image file loade
 
 ```javascript
 import React from "react"
+import PropTypes from "prop-types"
 import PreviewableImage from "@alexseitsinger/previewable-image"
 import placeholder200x200 from "../../images/200x200.png"
 
@@ -33,12 +34,13 @@ class ExampleForm extends React.Component {
 	}
 	render() {
 		const { onFormCompleted } = this.props
+		const { file } = this.state
 		return (
 			<form
 				onSubmit={(event) => {
 					event.stopPropagation()
 					event.preventDefault()
-					onFormCompleted(this.state.file)
+					onFormCompleted(file)
 				}}>
 				<PreviewableImage
 					onPreviewLoaded={(file, dataURI) => {
