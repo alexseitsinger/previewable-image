@@ -1,6 +1,6 @@
 {
 	"name": "@alexseitsinger/previewable-image",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "An input file field that automatically renders a preview of the image file loaded.",
 	"main": "dist/main.js",
 	"homepage": "https://github.com/alexseitsinger/previewable-image#readme",
@@ -16,26 +16,26 @@
 	},
 	"files": ["dist/", "package.json", "README.md"],
 	"devDependencies": {
-		"babel-core": "^6.26.3",
+		"@babel/core": "^7.2.2",
+		"@babel/plugin-proposal-class-properties": "^7.2.3",
+		"@babel/preset-env": "^7.2.3",
+		"@babel/preset-react": "^7.0.0",
+		"babel-core": "^7.0.0-bridge.0",
 		"babel-jest": "^23.6.0",
-		"babel-loader": "^7.1.5",
-		"babel-plugin-emotion": "^9.2.10",
-		"babel-plugin-transform-react-remove-prop-types": "^0.4.13",
-		"babel-preset-env": "^1.7.0",
-		"babel-preset-react": "^6.24.1",
-		"babel-preset-stage-0": "^6.24.1",
-		"enzyme": "^3.7.0",
-		"enzyme-adapter-react-16": "^1.6.0",
+		"babel-loader": "^8.0.4",
+		"babel-plugin-emotion": "^10.0.5",
+		"enzyme": "^3.8.0",
+		"enzyme-adapter-react-16": "^1.7.1",
 		"jest": "^23.6.0",
-		"react-dom": "^16.6.1",
-		"react-emotion": "^9.2.10",
-		"webpack": "^4.16.1",
-		"webpack-cli": "^3.1.0",
-		"emotion": "^9.2.10"
+		"webpack": "^4.28.3",
+		"webpack-cli": "^3.1.0"
 	},
 	"dependencies": {
+		"@emotion/core": "^10.0.5",
+		"@emotion/styled": "^10.0.5",
 		"prop-types": "^15.6.2",
-		"react": "^16.4.1"
+		"react": "^16.7.0",
+		"react-dom": "^16.7.0"
 	},
 	"scripts": {
 		"build": "./node_modules/.bin/webpack --config=webpack.config.js",
