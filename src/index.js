@@ -11,6 +11,7 @@ import {
 
 class PreviewableImage extends React.Component {
 	static propTypes = {
+		name: PropTypes.string,
 		onPreviewLoaded: PropTypes.func.isRequired,
 		containerClassName: PropTypes.string,
 		alt: PropTypes.string,
@@ -24,6 +25,7 @@ class PreviewableImage extends React.Component {
 	}
 
 	static defaultProps = {
+		name: "image",
 		containerClassName: "PreviewableImage",
 		alt: "",
 		initialImage: "",
@@ -48,36 +50,22 @@ class PreviewableImage extends React.Component {
 			previewWidth,
 			previewHeight
 		} = this.props
-		var image = null
+		var imageSrc = ""
 		if (src) {
-			image = (
-				<Image
-					src={src}
-					alt={alt}
-					width={previewWidth}
-					height={previewHeight}
-				/>
-			)
+			imageSrc = src
 		} else if (initialImage) {
-			image = (
-				<Image
-					src={initialImage}
-					alt={alt}
-					width={previewWidth}
-					height={previewHeight}
-				/>
-			)
+			imageSrc = initialImage
 		} else if (placeholderImage) {
-			image = (
-				<Image
-					src={placeholderImage}
-					alt={alt}
-					height={previewHeight}
-					width={previewWidth}
-				/>
-			)
+			imageSrc = placeholderImage
 		}
-		return image
+		return (
+			<Image
+				src={imageSrc}
+				alt={alt}
+				height={previewHeight}
+				width={previewWidth}
+			/>
+		)
 	}
 
 	handleChangeInputField = (event) => {
@@ -98,7 +86,9 @@ class PreviewableImage extends React.Component {
 	}
 
 	renderInputField = () => {
-		return <Input type="file" onChange={this.handleChangeInputField} />
+		return (
+			<Input name={name} type={"file"} onChange={this.handleChangeInputField} />
+		)
 	}
 
 	handleClickResetButton = (event) => {

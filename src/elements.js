@@ -1,6 +1,5 @@
-import styled from "react-emotion"
-import { css } from "emotion"
-
+import { css } from "@emotion/core"
+import styled from "@emotion/styled"
 
 export const Container = styled.div`
 	position: relative;
